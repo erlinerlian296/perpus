@@ -78,19 +78,11 @@
             @foreach ($buku as $b)
             <div class="col-md-3"> <!-- Adjust the column size based on your preference -->
                 <div class="card mb-3">
-<<<<<<< HEAD
-                    <img src="{{ asset('storage/'.$b->foto) }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$b->judul}}</h5>
-                        <p class="card-text">{{$b->deskripsi}}</p>
-                        <a href="#" class="btn btn-primary">Detail Buku</a>
-=======
                     <img src="{{ asset('storage/'.$b->foto) }}" style="max-width:100%; max-height:100%; height:350px; width:300px;" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">{{$b->judul}}</h5>
                         <p class="card-text">{{$b->deskripsi}}</p>
                         <a href="{{route('buku.show', $b->id)}}" class="btn btn-primary">Detail Buku</a>
->>>>>>> 6dc677e (perubahan)
                     </div>
                 </div>
             </div>

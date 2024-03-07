@@ -53,7 +53,7 @@ class BukuController extends Controller
     {
         $buku = Buku::findOrFail($id);
         $kategori = Kategori::distinct()->get();
-        return view('buku.buku_edit', compact('buku', 'kategori'));
+        return view('buku.edit', compact('buku', 'kategori'));
     }
 
     public function update(Request $request, $id)
@@ -97,6 +97,16 @@ class BukuController extends Controller
     public function welcome(){
         $buku = Buku::all();
         return view ('welcome', ['buku' => $buku]);
+    }
+
+    public function hapus($id){
+        Buku::find($id)->delete();
+        return redirect ('/buku');
+    }
+
+    public function show ($id){
+        $buku = Buku::findOrFail($id);
+        return view('Buku.detail_buku', ['buku' => $buku]);
     }
 }
 

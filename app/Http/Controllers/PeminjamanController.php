@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Peminjaman;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-
+use PDF;
 class PeminjamanController extends Controller
 {
     public function index()
@@ -62,5 +62,19 @@ class PeminjamanController extends Controller
             ->get();
 
         return view('peminjaman.user_index', compact('peminjaman'));
+    }
+
+    public function print(){
+        $user = User::all();
+        $buku = Buku::all();
+        $peminjaman = peminjaman::all();
+        $data = [
+            'user' => $user,
+            'buku' => $buku,
+            'peminjaman' => $peminjaman,
+        ];
+        $pdf = PDF::loadView('format.format', $data)
+        ->setPaper('a4');
+        return $pdf->download('Laporan.pdf');
     }
 }

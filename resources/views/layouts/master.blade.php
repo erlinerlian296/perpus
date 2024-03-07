@@ -47,10 +47,7 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-<<<<<<< HEAD
-=======
             @role('admin')
->>>>>>> 6dc677e (perubahan)
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
@@ -82,11 +79,8 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-<<<<<<< HEAD
-=======
             @endrole
 
->>>>>>> 6dc677e (perubahan)
             <!-- Sidebar Message -->
            
 
