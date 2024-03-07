@@ -23,11 +23,7 @@ Route::get('/', [BukuController::class, 'welcome']);
 
 Auth::routes();
 
-<<<<<<< HEAD
 Route::middleware('auth')->group(function () {
-=======
-Route::middleware(['auth', 'role:admin'])->group(function () {
->>>>>>> 6dc677e (perubahan)
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     //Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     //Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -43,11 +39,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/buku/tambah', [BukuController::class, 'create'])->name('buku.create');
     Route::get('/buku/hapus/{id}',[BukuController::class, 'hapus'])->name('buku.hapus');
     Route::get('/buku/edit/{id}',[BukuController::class, 'edit'])->name('buku.edit');
-<<<<<<< HEAD
-    Route::post('/buku/update/{id}',[BukuController::class, 'update'])->name('buku.update');
-=======
     Route::put('/buku/update/{id}',[BukuController::class, 'update'])->name('buku.update');
->>>>>>> 6dc677e (perubahan)
     Route::delete('/buku/destroy/{id}', [BukuController::class, 'destroy'])->name('buku.destroy');
     Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman.index');
     Route::get('/peminjaman/tambah', [PeminjamanController::class, 'tambahPeminjaman'])->name('peminjaman.tambah');
@@ -57,12 +49,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/report', [PeminjamanController::class, 'print'])->name('print'); 
 });
 
-<<<<<<< HEAD
-=======
 Route::get('/buku/detail/{id}', [BukuController::class, 'show'])->name('buku.show');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/user/peminjaman', [PeminjamanController::class, 'userPeminjaman'])->name('peminjaman.user')
 ->middleware(['auth', 'role:user']);
 
 
->>>>>>> 6dc677e (perubahan)

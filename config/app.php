@@ -166,15 +166,10 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
-<<<<<<< HEAD
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-=======
         Spatie\Permission\PermissionServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
->>>>>>> 6dc677e (perubahan)
     ])->toArray(),
 
     /*
