@@ -31,6 +31,10 @@
                                 <th nowrap>Tahun Terbit: </th>
                                 <td nowrap>{{$buku->tahun_terbit}}</td>
                             </tr>
+                            <tr>
+                                <th nowrap>Deskripsi: </th>
+                                <td>{{$buku->Deskripsi}}</td>
+                            </tr>
                         </table>
                     </div>
                 </div>

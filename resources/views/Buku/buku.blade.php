@@ -20,6 +20,7 @@
                                     <th>Penulis</th>
                                     <th>Penerbit</th>
                                     <th>Tahun Terbit</th>
+                                    <th>Deskripsi</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -32,6 +33,7 @@
                                         <td>{{ $b->penulis }}</td>
                                         <td>{{ $b->penerbit }}</td>
                                         <td>{{ $b->tahun_terbit }}</td>
+                                        <td>{{ $b->Deskripsi }}</td>
                                         <td>
                                             
                                             <a href="{{ route('buku.edit', $b->id) }}" class="btn btn-primary">

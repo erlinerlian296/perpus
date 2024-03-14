@@ -35,8 +35,17 @@
                             </div>
 
                             <div class="mb-3">
+                                <label for="Deskripsi" class="form-label">Deskripsi:</label>
+                                <input type="text" name="Deskripsi" class="form-control" value="{{ $buku->Deskripsi }}" required>
+                            </div>
+
+
+                            <div class="mb-3">
                                 <label for="tahun_terbit" class="form-label">Tahun Terbit:</label>
                                 <select name="tahun_terbit" class="form-select custom-select" required>
+                            </div>
+
+                            
                                     @php
                                         $currentYear = date('Y');
                                         $startYear = 1900; 

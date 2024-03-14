@@ -18,11 +18,6 @@
                         <form action="{{ route('buku.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
 
-                            <div class="mb-3">
-                                <label for="foto" class="form-label">Foto Buku:</label>
-                                <input type="file" name="foto" accept="image/*" class="form-control" required>
-                            </div>
-
                             <div class="mb-4">
                                 <label for="judul" class="form-label">Judul:</label>
                                 <input type="text" name="judul" class="form-control" required>
@@ -43,6 +38,12 @@
                                 <input type="number" name="tahun_terbit" class="form-control" required>
                             </div>
 
+                            
+                            <div class="mb-4">
+                                <label for="Deskripsi" class="form-label">Deskripsi:</label>
+                                <input type="text" name="Deskripsi" class="form-control" required>
+                            </div>
+
                             <div class="mb-4">
                                 <label for="kategori_id" class="form-label">Kategori:</label>
                                 <select name="kategori_id" class="form-control" required>
@@ -51,8 +52,11 @@
                                     @endforeach
                                 </select>
                             </div>
-
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <div class="mb-3">
+                                <label for="foto" class="form-label">Foto Buku:</label>
+                                <input type="file" name="foto" accept="image/*" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-outline-primary">Simpan</button>
                         </form>
                     </div>
                 </div>

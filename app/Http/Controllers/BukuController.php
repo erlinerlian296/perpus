@@ -32,11 +32,13 @@ class BukuController extends Controller
             'penulis' => 'required',
             'penerbit' => 'required',
             'tahun_terbit' => 'required|integer',
+            'Deskripsi' => 'required',
             'kategori_id' => 'required',
         ]);
         $fotoPath = $request->file('foto')->store('buku_images', 'public');
         //cari kategori berdasarkan ID
         $kategori = Kategori::find($request->kategori_id);
+
         //tambah buku baru beserta kategori
         $buku = Buku::create([
             'foto' => $fotoPath,
@@ -44,7 +46,9 @@ class BukuController extends Controller
             'penulis' => $request->penulis,
             'penerbit' => $request->penerbit,
             'tahun_terbit' => $request->tahun_terbit,
+            'Deskripsi' => $request->Deskripsi,
         ]);
+
         //plot kategori ke data buku yang ditambahkan
         $buku->kategori()->attach($kategori);
         return redirect('/buku')->with('success', 'Buku berhasil ditambahkan!');
@@ -64,6 +68,8 @@ class BukuController extends Controller
             'penerbit' => 'required',
             'tahun_terbit' => 'required|integer',
             'kategori_id' => 'required',
+            'Deskripsi' => 'required',
+            
         ]);
 
         $buku = Buku::findOrFail($id);
@@ -85,6 +91,7 @@ class BukuController extends Controller
         $buku->penulis = $request->penulis;
         $buku->penerbit = $request->penerbit;
         $buku->tahun_terbit = $request->tahun_terbit;
+        $buku->Deskripsi = $request->Deskripsi;
         $buku->save();
 
         // Update kategori
